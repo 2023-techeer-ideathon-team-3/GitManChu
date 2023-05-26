@@ -7,6 +7,8 @@ import Box from '@mui/material/Box';
 import MainPage from '../../pages/MainPage';
 import MyPage from '../../pages/MyPage';
 
+import AppHeader from '../../common/AppHeader'
+
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
 
@@ -49,8 +51,11 @@ export default function HeaderTab() {
 
   return (
     <Box sx={{ width: '100%' }}>
-      <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
-        <Tabs value={value} onChange={handleChange} aria-label="basic tabs example">
+      <AppHeader/>
+      <Box sx={{ borderBottom: 1, borderColor: 'divider', backgroundColor: '#F5F1F1' }}>
+        <Tabs value={value} onChange={handleChange} aria-label="basic tabs example"
+                TabIndicatorProps={{ style: { background: "#000" } }}
+                textColor="inherit">
           <Tab label="메이트" {...a11yProps(0)} />
           <Tab label="깃만추" {...a11yProps(1)} />
         </Tabs>
