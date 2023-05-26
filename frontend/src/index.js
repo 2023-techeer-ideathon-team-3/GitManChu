@@ -1,10 +1,12 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
-import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import AppHeader from "./common/AppHeader";
+// import AppHeader from "./common/AppHeader";
+import MyPage from "./pages/MyPage";
+import MainPage from "./pages/MainPage";
+import HeaderTab from "./components/Header/HeaderTab";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -13,8 +15,10 @@ root.render(
   // </React.StrictMode>
   <div>
     <Router>
-      <AppHeader />
-      <Routes></Routes>
+      {/* <AppHeader /> */}
+      <Routes>
+        <Route path="/" element={<HeaderTab/>}/>
+      </Routes>
     </Router>
   </div>
 );
